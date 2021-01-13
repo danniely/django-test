@@ -22,9 +22,18 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '39.124.28.42', 'hyunho-backend.herok
 
 # Application definition
 
-CORS_ORIGIN_ALLOW_ALL=True
+CORS_ALLOW_ALL_ORIGINS=True
 
-CORS_ORIGIN_WHITELIST = [
+
+CORS_ALLOWED_ORIGINS = = [
+    'http://google.com',
+    'http://hostname.example.com',
+    'http://localhost:8000',
+    'http://127.0.0.1:9000',
+    'https://hyunho-backend.herokuapp.com'
+]
+
+CSRF_TRUSTED_ORIGINS = = [
     'http://google.com',
     'http://hostname.example.com',
     'http://localhost:8000',
@@ -48,7 +57,6 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
