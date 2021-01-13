@@ -64,7 +64,10 @@ def add_car(request):
                 response = json.dumps([{ 'Success': 'Car added successfully!'}])
             except:
                 response = json.dumps([{ 'Error': 'Car could not be added!'}])
-    return HttpResponse(response, content_type='text/json')
+                
+    res = HttpResponse(response, content_type='text/json')
+    res['Access-Control-Allow-Origin'] = '*'
+    return res
 
 
 def check_if_words_valid(first_word, second_word):
