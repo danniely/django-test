@@ -14,16 +14,17 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'changeme')
 #DEBUG = bool(int(os.environ.get('DEBUG', 0)))
 DEBUG = False
 
-# ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*']
 # ALLOWED_HOSTS_ENV = os.environ.get('ALLOWED_HOSTS')
 # if ALLOWED_HOSTS_ENV:
 #     ALLOWED_HOSTS.extend(ALLOWED_HOSTS_ENV.split(','))
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '39.124.28.42', 'hyunho-backend.herokuapp.com']
+
+#ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '39.124.28.42', 'hyunho-backend.herokuapp.com']
 
 # Application definition
 
-CORS_ALLOW_ALL_ORIGINS=True
-
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOWED_ORIGINS = = [
     'http://google.com',
@@ -50,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myapp',
+    'myapp.apps.MyappConfig'
 ]
 
 MIDDLEWARE = [
