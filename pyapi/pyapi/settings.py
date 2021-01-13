@@ -123,20 +123,19 @@ MEDIA_ROOT = '/vol/web/media'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 CORS_ALLOW_ALL_ORIGINS = True
-CORS_ORIGIN_ALLOW_ALL = True
-
-CORS_ALLOWED_ORIGINS = = [
-    'http://google.com',
-    'http://hostname.example.com',
-    'http://localhost:8000',
-    'http://127.0.0.1:9000',
-    'http://hyunho-backend.herokuapp.com'
-]
-
-CSRF_TRUSTED_ORIGINS = = [
-    'http://google.com',
-    'http://hostname.example.com',
-    'http://localhost:8000',
-    'http://127.0.0.1:9000',
-    'http://hyunho-backend.herokuapp.com'
-]
+#
+# CORS_ALLOWED_ORIGINS = = [
+#     'http://google.com',
+#     'http://hostname.example.com',
+#     'http://localhost:8000',
+#     'http://127.0.0.1:9000',
+#     'http://hyunho-backend.herokuapp.com'
+# ]
+#
+# CSRF_TRUSTED_ORIGINS = = [
+#     'http://google.com',
+#     'http://hostname.example.com',
+#     'http://localhost:8000',
+#     'http://127.0.0.1:9000',
+#     'http://hyunho-backend.herokuapp.com'
+# ]
