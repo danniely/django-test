@@ -11,6 +11,7 @@ def index(request):
     response = json.dumps([{}])
     res = HttpResponse(response, content_type='text/json')
     res['Access-Control-Allow-Origin'] = '*'
+    res['Access-Control-Allow-Headers'] = '*'
     return res
 
 def get_car(request, car_name):
@@ -23,6 +24,7 @@ def get_car(request, car_name):
             response = json.dumps([{ 'Error': 'No car with that name'}])
     res = HttpResponse(response, content_type='text/json')
     res['Access-Control-Allow-Origin'] = '*'
+    res['Access-Control-Allow-Headers'] = '*'
     return res
 
 def get_all_cars(request):
@@ -38,6 +40,7 @@ def get_all_cars(request):
 
     res = HttpResponse(response, content_type='text/json')
     res['Access-Control-Allow-Origin'] = '*'
+    res['Access-Control-Allow-Headers'] = '*'
     return res
 
 @csrf_exempt
@@ -64,9 +67,10 @@ def add_car(request):
                 response = json.dumps([{ 'Success': 'Car added successfully!'}])
             except:
                 response = json.dumps([{ 'Error': 'Car could not be added!'}])
-                
+
     res = HttpResponse(response, content_type='text/json')
     res['Access-Control-Allow-Origin'] = '*'
+    res['Access-Control-Allow-Headers'] = '*'
     return res
 
 
