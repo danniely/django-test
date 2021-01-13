@@ -9,8 +9,9 @@ from myapp.models import Car
 def index(request):
     response = ''
     response = json.dumps([{}])
-    response['Access-Control-Allow-Origin'] = '*'
-    return HttpResponse(response, content_type='text/json')
+    res = HttpResponse(response, content_type='text/json')
+    res['Access-Control-Allow-Origin'] = '*'
+    return res
 
 def get_car(request, car_name):
     response = ''
@@ -20,8 +21,9 @@ def get_car(request, car_name):
             response = json.dumps([{ 'Car': car.name, 'Top_Speed': car.top_speed}])
         except:
             response = json.dumps([{ 'Error': 'No car with that name'}])
-    response['Access-Control-Allow-Origin'] = '*'
-    return HttpResponse(response, content_type='text/json')
+    res = HttpResponse(response, content_type='text/json')
+    res['Access-Control-Allow-Origin'] = '*'
+    return res
 
 def get_all_cars(request):
     cars = []
@@ -34,8 +36,9 @@ def get_all_cars(request):
         except:
             response = json.dumps([{ 'Error': 'Could not retrieve all data.'}])
 
-    response['Access-Control-Allow-Origin'] = '*' 
-    return HttpResponse(response, content_type='text/json')
+    res = HttpResponse(response, content_type='text/json')
+    res['Access-Control-Allow-Origin'] = '*'
+    return res
 
 @csrf_exempt
 def add_car(request):
